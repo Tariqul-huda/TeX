@@ -13,7 +13,7 @@ int main()
     bool c=false;
 
     n=countQuote(s);
-    size2=arraySize(s)+n+1;
+    size2=arraySize(s)+n+2;
     char temp[size2];
     for(int i=0,j=0; s[i]!='\0'; i++,j++)
     {
@@ -26,15 +26,16 @@ int main()
         }
         if(s[i]=='"' && c)
         {
-            temp[j]='\'\'';
-            temp[++j]='\'\'';
+            temp[j]='\'';
+            temp[++j]='\'';
             i++,j++;
             c=false;
         }
         temp[j]=s[i];
     }
-    temp[size2-1]='\0';
-    for(int i=0; temp[i]!='\0'; i++)
+    temp[size2-2]='\0';
+    temp[size2-1]=-1;
+    for(int i=0; temp[i]!=-1; i++)
     {
         cout<<temp[i];
     }
