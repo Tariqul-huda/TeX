@@ -7,7 +7,7 @@ int main()
 {
     freopen("index.txt","r",stdin);
     char s[10000];
-    scanf("%[^-1]",&s);
+    scanf("%[^-1]",s);
 
     int n,size2;
     bool c=false;
